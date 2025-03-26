@@ -1,6 +1,6 @@
 export const appData = {
     "food_hall": {
-      "name": "Saborar Food Hall",
+      "name": "Saborar Food Park",
       "address": "Rua das Delícias, 123, Centro, São Paulo - SP",
       "map_location": "https://maps.google.com/?q=-23.55052,-46.633308",
       "phone": "(11) 98765-4321",
