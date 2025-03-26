@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { registerRootComponent } from 'expo';
-import { SplashLoader } from '../app/screens/SplashLoader';
+import { SplashLoader } from './pages/SplashLoader';
 import { Text, View } from "react-native";
 import { appData } from "./storage/appData";
 import * as SplashScreen from 'expo-splash-screen';

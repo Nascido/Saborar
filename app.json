@@ -23,9 +23,9 @@
       }
     },
     "web": {
-      "bundler": "metro",
+      "bundler": "foodpark",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/foodpark_splash.png"
     },
     "plugins": [
       "expo-router",
