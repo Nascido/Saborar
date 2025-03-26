@@ -1,6 +1,8 @@
 import { Text, View } from "react-native";
+import { appData } from "./storage/appData";
 
 export default function Index() {
+  const  foodHallData = appData.food_hall
   return (
     <View
       style={{
@@ -9,7 +11,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>{foodHallData.name}</Text>
     </View>
   );
 }
