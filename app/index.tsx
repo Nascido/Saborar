@@ -1,20 +1,37 @@
-import { registerRootComponent } from "expo";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import RestaurantDetails from "./pages/RestaurantDetails";
-import RestaurantsList from "./pages/RestaurantsList";
-import { RootStackParamList } from "./types/types"; // Se não tiver, crie esse arquivo
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+import React, { useEffect } from 'react';
+import { registerRootComponent } from 'expo';
+import { SplashLoader } from './pages/SplashLoader';
+import { Text, View } from "react-native";
+import { appData } from "./storage/appData";
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync();
 
 export default function Index() {
+  const foodHallData = appData.food_hall;
+
+  useEffect(() => {
+    const prepare = async () => {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      await SplashScreen.hideAsync();
+    };
+
+    prepare();
+  }, []);
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="RestaurantsList">
-        <Stack.Screen name="RestaurantsList" component={RestaurantsList} />
-        <Stack.Screen name="RestaurantDetails" component={RestaurantDetails} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SplashLoader>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Text>{foodHallData.name}</Text>
+      </View>
+    </SplashLoader>
   );
 }
 

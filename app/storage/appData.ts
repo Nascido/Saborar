@@ -1,3 +1,4 @@
+
 // Definindo os tipos dos dados que serão usados
 type SocialMedia = {
   instagram: string;
