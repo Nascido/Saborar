@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { registerRootComponent } from 'expo';
 import { SplashLoader } from './pages/SplashLoader';
